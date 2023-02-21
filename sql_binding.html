@@ -47,6 +47,9 @@
                 success:function(response)
                 {
                     let jsonResponse = eval(response)
+                    console.log(jsonResponse);
+                    length = jsonResponse.length;
+                    console.log(length);
                     var table = document.getElementById('myTable')
                     
                     buildTable(jsonResponse)
@@ -62,8 +65,8 @@
 		    for (var i = 0; i < data.length; i++)
             {
 			    var row = `<tr>
-					<td>${data[i].vertical}</td>
-					<td>${data[i].SMRU_ID}</td>
+					<td>${data[i].log_date}</td>
+					<td>${data[i].SMRU_Name}</td>
 					<td>${data[i].mood}</td>
 					  </tr>`
 			    table.innerHTML += row
